@@ -269,7 +269,7 @@
     <Style TargetType="{x:Type local:ColorPicker}">
         <Setter Property="Background" Value="White" />
         <Setter Property="BorderBrush" Value="{StaticResource ColorPickerDarkBorderBrush}" />
-        <Setter Property="BorderThickness" Value="1,1,0,1" />
+        <Setter Property="BorderThickness" Value="0.75,0.75,0,0.75" />
         <Setter Property="ButtonStyle" Value="{StaticResource ColorPickerToggleButtonStyle}" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
