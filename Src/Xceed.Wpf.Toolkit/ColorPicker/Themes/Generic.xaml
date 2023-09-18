@@ -308,7 +308,6 @@
 
                                 <Border
                                     x:Name="ColorAndName"
-                                    Background="White"
                                     Visibility="Hidden">
                                     <StackPanel Orientation="Horizontal">
                                         <ContentControl
@@ -318,7 +317,7 @@
                                             BorderBrush="#FFC9CACA"
                                             BorderThickness="1"
                                             Style="{StaticResource ColorDisplayStyle}" />
-                                        <TextBlock VerticalAlignment="Center" Text="{Binding SelectedColorText, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <TextBlock VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" Text="{Binding SelectedColorText, RelativeSource={RelativeSource TemplatedParent}}" />
                                     </StackPanel>
                                 </Border>
                             </Grid>

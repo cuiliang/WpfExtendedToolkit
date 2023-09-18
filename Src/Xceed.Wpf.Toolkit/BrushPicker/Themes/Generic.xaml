@@ -1,17 +1,20 @@
-﻿<!--*****************   NCore Softwares Pvt. Ltd., India   **************************
-
-   ColorBox
-
-   Copyright (C) 2013 NCore Softwares Pvt. Ltd.
-
-   This program is provided to you under the terms of the Microsoft Public
-   License (Ms-PL) as published at http://colorbox.codeplex.com/license
-
-*********************************************************************************** -->
+﻿<!--
+    *****************   NCore Softwares Pvt. Ltd., India   **************************
     
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:ColorBox">
+    ColorBox
+    
+    Copyright (C) 2013 NCore Softwares Pvt. Ltd.
+    
+    This program is provided to you under the terms of the Microsoft Public
+    License (Ms-PL) as published at http://colorbox.codeplex.com/license
+    
+    ***********************************************************************************
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ColorBox">
 
     <Geometry x:Key="SkewIcon">M456.021,227.816L545.590,227.816L456.021,362.171L366.452,362.171L456.021,227.816</Geometry>
     <Geometry x:Key="TranslateIcon">M384,289.828L384,363L457.171,363M384,363L457.171,289.828M480,267L480,310.011L435.711,267L480,267</Geometry>
@@ -20,23 +23,28 @@
     <Geometry x:Key="CenterIcon">M502.672,272.601C502.672,298.366 481.785,319.252 456.021,319.252 430.257,319.252 409.370,298.366 409.370,272.601 409.370,246.837 430.257,225.950 456.021,225.950 481.785,225.950 502.672,246.837 502.672,272.601zM502.672,272.601C502.672,298.366 481.785,319.252 456.021,319.252 430.257,319.252 409.370,298.366 409.370,272.601 409.370,246.837 430.257,225.950 456.021,225.950 481.785,225.950 502.672,246.837 502.672,272.601zM470.531,272.601C470.531,280.615 464.035,287.111 456.021,287.111 448.007,287.111 441.511,280.615 441.511,272.601 441.511,264.588 448.007,258.091 456.021,258.091 464.035,258.091 470.531,264.588 470.531,272.601z</Geometry>
     <Geometry x:Key="FlipIcon">M384,267L384,363L480,363M384,363L459.026,286.973L438,267L479.000,267L479.000,307.000L459.026,286.973</Geometry>
 
-    <Style TargetType="Path" x:Key="IconStyle">
-        <Setter Property="Height" Value="16"/>
-        <Setter Property="Width" Value="16"/>
-        <Setter Property="Fill" Value="Black"/>        
-        <Setter Property="Stretch" Value="Fill"/>
+    <Style x:Key="IconStyle" TargetType="Path">
+        <Setter Property="Height" Value="16" />
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Fill" Value="Black" />
+        <Setter Property="Stretch" Value="Fill" />
     </Style>
 
-    <Style TargetType="Slider" x:Key="OpacitySliderStyle">
-        <Setter Property="Value" Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
-        <Setter Property="IsMoveToPointEnabled" Value="True"/>
-        <Setter Property="Margin" Value="2"/>
-        <Setter Property="Minimum" Value="0"/>
-        <Setter Property="Maximum" Value="1"/>
+    <Style x:Key="OpacitySliderStyle" TargetType="Slider">
+        <Setter Property="Value" Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+        <Setter Property="IsMoveToPointEnabled" Value="True" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Maximum" Value="1" />
     </Style>
 
-    <BooleanToVisibilityConverter x:Key="BoolToVis"></BooleanToVisibilityConverter>        
-    <VisualBrush x:Key="AlphaBrush" Stretch="None" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,8,8">
+    <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    <VisualBrush
+        x:Key="AlphaBrush"
+        Stretch="None"
+        TileMode="Tile"
+        Viewport="0,0,8,8"
+        ViewportUnits="Absolute">
         <VisualBrush.Visual>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -47,15 +55,27 @@
                     <RowDefinition Height="4" />
                     <RowDefinition Height="4" />
                 </Grid.RowDefinitions>
-                <Rectangle Fill="#FFF" Grid.Row="0" Grid.Column="0" />
-                <Rectangle Fill="#AAA" Grid.Row="0" Grid.Column="1" />
-                <Rectangle Fill="#AAA" Grid.Row="1" Grid.Column="0" />
-                <Rectangle Fill="#FFF" Grid.Row="1" Grid.Column="1" />
+                <Rectangle
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Fill="#FFF" />
+                <Rectangle
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Fill="#AAA" />
+                <Rectangle
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Fill="#AAA" />
+                <Rectangle
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Fill="#FFF" />
             </Grid>
         </VisualBrush.Visual>
     </VisualBrush>
-        
-    <!-- Gradient Stop Thumb Style -->
+
+    <!--  Gradient Stop Thumb Style  -->
     <Style x:Key="SliderThumbStyle" TargetType="Thumb">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="Black" />
@@ -63,29 +83,37 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
                     <Grid>
-                        <Path Data="M468.9,240 A71.7,71.7,0,1,0,593, 240 M468.9,240 L531,152 L593,240"
-                              Height="16" Width="14" Stretch="Fill"
-                              Fill="White" Stroke="{TemplateBinding BorderBrush}"/>
+                        <Path
+                            Width="14"
+                            Height="16"
+                            Data="M468.9,240 A71.7,71.7,0,1,0,593, 240 M468.9,240 L531,152 L593,240"
+                            Fill="White"
+                            Stretch="Fill"
+                            Stroke="{TemplateBinding BorderBrush}" />
 
-                        <Path Data="M468.9,240 A71.7,71.7,0,1,0,593,240 M468.9,240 L531,152 L593,240"
-                              Height="12" Width="8" Stretch="Fill"
-                              Fill="{TemplateBinding Background}" />
+                        <Path
+                            Width="8"
+                            Height="12"
+                            Data="M468.9,240 A71.7,71.7,0,1,0,593,240 M468.9,240 L531,152 L593,240"
+                            Fill="{TemplateBinding Background}"
+                            Stretch="Fill" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <!-- Gradient Stop Slider Style -->
+    <!--  Gradient Stop Slider Style  -->
     <Style x:Key="GradientStopSliderStyle" TargetType="Slider">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Slider">
                     <Track x:Name="PART_Track">
                         <Track.Thumb>
-                            <Thumb Style="{StaticResource SliderThumbStyle}"
-                                   Background="{TemplateBinding Background}"
-                                   BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <Thumb
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Style="{StaticResource SliderThumbStyle}" />
                         </Track.Thumb>
                     </Track>
                 </ControlTemplate>
@@ -94,8 +122,8 @@
     </Style>
 
 
-    
-    <!-- ******* DoubleUpDown ******* -->
+
+    <!--  ******* DoubleUpDown *******  -->
 
     <Style x:Key="NumericUpDown" TargetType="{x:Type local:UpDownBase}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -108,28 +136,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:UpDownBase">
-                    <local:Spinner IsTabStop="False"
-                                   Background="{TemplateBinding Background}"
-                                   BorderThickness="{TemplateBinding BorderThickness}">
+                    <local:Spinner
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        IsTabStop="False">
 
-                        <TextBox x:Name="PART_TextBox"
-                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                 FocusVisualStyle="{x:Null}"
-                                 Background="{TemplateBinding Background}"
-                                 ContextMenu="{TemplateBinding ContextMenu}"
-                                 FontFamily="{TemplateBinding FontFamily}"
-                                 FontSize="{TemplateBinding FontSize}"
-                                 FontStretch="{TemplateBinding FontStretch}"
-                                 FontStyle="{TemplateBinding FontStyle}" 
-                                 FontWeight="{TemplateBinding FontWeight}" 
-                                 Foreground="{TemplateBinding Foreground}"                                  
-                                 IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
-                                 MinWidth="20"
-                                 AcceptsReturn="False"
-                                 Padding="{TemplateBinding Padding}"
-                                 TabIndex="{TemplateBinding TabIndex}"
-                                 local:TextBoxBehavior.SelectAllTextOnFocus="True"
-                                 />
+                        <TextBox
+                            x:Name="PART_TextBox"
+                            MinWidth="20"
+                            Padding="{TemplateBinding Padding}"
+                            local:TextBoxBehavior.SelectAllTextOnFocus="True"
+                            AcceptsReturn="False"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            ContextMenu="{TemplateBinding ContextMenu}"
+                            FocusVisualStyle="{x:Null}"
+                            FontFamily="{TemplateBinding FontFamily}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontStretch="{TemplateBinding FontStretch}"
+                            FontStyle="{TemplateBinding FontStyle}"
+                            FontWeight="{TemplateBinding FontWeight}"
+                            Foreground="{TemplateBinding Foreground}"
+                            IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
+                            TabIndex="{TemplateBinding TabIndex}" />
 
                     </local:Spinner>
                 </ControlTemplate>
@@ -137,13 +166,13 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:DoubleUpDown}" BasedOn="{StaticResource NumericUpDown}">
-        <Setter Property="Increment" Value=".1"/>
-        <Setter Property="FormatString" Value="F1"/>
+    <Style BasedOn="{StaticResource NumericUpDown}" TargetType="{x:Type local:DoubleUpDown}">
+        <Setter Property="Increment" Value=".1" />
+        <Setter Property="FormatString" Value="F1" />
     </Style>
 
 
-    <!-- ******* Spinner ******* -->
+    <!--  ******* Spinner *******  -->
 
     <Style TargetType="{x:Type local:Spinner}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -154,20 +183,21 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Spinner}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}">
-                        <ContentPresenter/>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
 
-    <!-- ******* ColorBox ******* -->
-    <Style TargetType="{x:Type local:ColorBox}">     
+
+
+    <!--  ******* ColorBox *******  -->
+    <Style TargetType="{x:Type local:ColorBox}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="#E7E8E8" />
@@ -176,33 +206,33 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ColorBox}">
-                    
-                    <ControlTemplate.Resources>
-                        
-                    </ControlTemplate.Resources>
-                    
-                    <Border x:Name="PART_Root"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                    <ControlTemplate.Resources />
+
+                    <Border
+                        x:Name="PART_Root"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                         <Border.InputBindings>
-                            <KeyBinding Key="Del" Command="{x:Static local:ColorBox.RemoveGradientStop}"/>
+                            <KeyBinding Key="Del" Command="{x:Static local:ColorBox.RemoveGradientStop}" />
                         </Border.InputBindings>
 
                         <Grid>
 
-                            <ToggleButton x:Name="PART_OpenPopup"
-                                          BorderThickness="0"
-                                          MinHeight="20"
-                                          Padding="1"
-                                          Foreground="{TemplateBinding Foreground}"
-                                          Background="{TemplateBinding Brush}">
+                            <ToggleButton
+                                x:Name="PART_OpenPopup"
+                                MinHeight="20"
+                                Padding="1"
+                                Background="{TemplateBinding Brush}"
+                                BorderThickness="0"
+                                Foreground="{TemplateBinding Foreground}">
                                 <ToggleButton.Style>
                                     <Style TargetType="{x:Type ToggleButton}">
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                                                    <DockPanel Background="Transparent" Margin="{TemplateBinding Padding}">
+                                                    <DockPanel Margin="{TemplateBinding Padding}" Background="Transparent">
                                                         <Border MinWidth="20" Background="{StaticResource AlphaBrush}">
                                                             <Border Background="{TemplateBinding Background}" />
                                                         </Border>
@@ -210,40 +240,46 @@
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
-                                      <Setter Property="IsHitTestVisible" Value="True"/>
-                                      <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=Popup, Path=IsOpen}" Value="True">
-                                          <Setter Property="IsHitTestVisible" Value="False"/>
-                                        </DataTrigger>
-                                      </Style.Triggers>
-                                     </Style>
+                                        <Setter Property="IsHitTestVisible" Value="True" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Popup, Path=IsOpen}" Value="True">
+                                                <Setter Property="IsHitTestVisible" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
                                 </ToggleButton.Style>
                             </ToggleButton>
 
-                            <Popup Name="Popup" IsOpen="{Binding ElementName=PART_OpenPopup, Path=IsChecked, Mode=TwoWay}" StaysOpen="False" AllowsTransparency="True"
-                                   Width="{Binding ActualWidth, ElementName=PART_Root}"
-                                   MinWidth="250"
-                                   HorizontalOffset="-1">
-                                <Border Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <Popup
+                                Name="Popup"
+                                Width="{Binding ActualWidth, ElementName=PART_Root}"
+                                MinWidth="250"
+                                AllowsTransparency="True"
+                                HorizontalOffset="-1"
+                                IsOpen="{Binding ElementName=PART_OpenPopup, Path=IsChecked, Mode=TwoWay}"
+                                StaysOpen="False">
+                                <Border
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
                                     <StackPanel Margin="5">
 
                                         <StackPanel.Resources>
                                             <Style x:Key="TBStyle" TargetType="TextBlock">
-                                                <Setter Property="Margin" Value="2"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                <Setter Property="Margin" Value="2" />
+                                                <Setter Property="VerticalAlignment" Value="Center" />
                                             </Style>
                                         </StackPanel.Resources>
-                                        
-                                        <!-- Available brush types -->
-                                        <ListBox x:Name="listAvailableBrushType"
-                                                 HorizontalContentAlignment="Center"
-                                                 SelectedItem="{Binding BrushType, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
-                                                 ItemsSource="{Binding AvailableBrushTypes, RelativeSource={RelativeSource TemplatedParent}}">
+
+                                        <!--  Available brush types  -->
+                                        <ListBox
+                                            x:Name="listAvailableBrushType"
+                                            HorizontalContentAlignment="Center"
+                                            ItemsSource="{Binding AvailableBrushTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                            SelectedItem="{Binding BrushType, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
                                             <ListBox.ItemsPanel>
                                                 <ItemsPanelTemplate>
-                                                    <UniformGrid Rows="1" Columns="5"/>
+                                                    <UniformGrid Columns="5" Rows="1" />
                                                 </ItemsPanelTemplate>
                                             </ListBox.ItemsPanel>
                                             <ListBox.ItemContainerStyle>
@@ -251,23 +287,33 @@
                                                     <Setter Property="Template">
                                                         <Setter.Value>
                                                             <ControlTemplate TargetType="ListBoxItem">
-                                                                <Border x:Name="Border" Background="Transparent" Padding="0,3">
-                                                                    <Path x:Name="Icon" Height="12" Width="16" Stretch="Fill" Fill="#FF403C3C" StrokeThickness="1" Stroke="Black"
-                                                                          Data="M371,190L557,190 557,293 371,293 371,190z"/>
+                                                                <Border
+                                                                    x:Name="Border"
+                                                                    Padding="0,3"
+                                                                    Background="Transparent">
+                                                                    <Path
+                                                                        x:Name="Icon"
+                                                                        Width="16"
+                                                                        Height="12"
+                                                                        Data="M371,190L557,190 557,293 371,293 371,190z"
+                                                                        Fill="#FF403C3C"
+                                                                        Stretch="Fill"
+                                                                        Stroke="Black"
+                                                                        StrokeThickness="1" />
                                                                 </Border>
                                                                 <ControlTemplate.Triggers>
                                                                     <Trigger Property="IsMouseOver" Value="True">
-                                                                        <Setter Property="Background" Value="Gray" TargetName="Border"/>
-                                                                        <Setter Property="Foreground" Value="White"/>
+                                                                        <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                                                        <Setter Property="Foreground" Value="White" />
                                                                     </Trigger>
                                                                     <Trigger Property="IsSelected" Value="True">
-                                                                        <Setter Property="Background" Value="Gray" TargetName="Border"/>
-                                                                        <Setter Property="Foreground" Value="White"/>
+                                                                        <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                                                        <Setter Property="Foreground" Value="White" />
                                                                     </Trigger>
-                                                                    
+
                                                                     <DataTrigger Binding="{Binding}" Value="None">
-                                                                        <Setter Property="ToolTip" Value="No Brush"/>
-                                                                        <Setter Property="StrokeThickness" TargetName="Icon" Value="0"/>
+                                                                        <Setter Property="ToolTip" Value="No Brush" />
+                                                                        <Setter TargetName="Icon" Property="StrokeThickness" Value="0" />
                                                                         <Setter TargetName="Icon" Property="Data">
                                                                             <Setter.Value>
                                                                                 <Geometry>M612,189L452.949,189L452.949,266.024L612,189 M612,196.999L452.949,273.999L612,273.999L612,196.999</Geometry>
@@ -275,31 +321,31 @@
                                                                         </Setter>
                                                                     </DataTrigger>
                                                                     <DataTrigger Binding="{Binding}" Value="Solid">
-                                                                        <Setter Property="ToolTip" Value="Solid Color Brush"/>
-                                                                        <Setter Property="Fill" TargetName="Icon" Value="#FF403C3C"/>
+                                                                        <Setter Property="ToolTip" Value="Solid Color Brush" />
+                                                                        <Setter TargetName="Icon" Property="Fill" Value="#FF403C3C" />
                                                                     </DataTrigger>
-                                                                   <DataTrigger Binding="{Binding}" Value="Predefined">
-                                                                        <Setter Property="ToolTip" Value="Predefined Brush"/>
-                                                                        <Setter Property="Fill" TargetName="Icon" Value="#FF707C3C"/>
+                                                                    <DataTrigger Binding="{Binding}" Value="Predefined">
+                                                                        <Setter Property="ToolTip" Value="Predefined Brush" />
+                                                                        <Setter TargetName="Icon" Property="Fill" Value="#FF707C3C" />
                                                                     </DataTrigger>
                                                                     <DataTrigger Binding="{Binding}" Value="Linear">
-                                                                        <Setter Property="ToolTip" Value="Linear Gradient Brush"/>
-                                                                        <Setter Property="Fill" TargetName="Icon">
+                                                                        <Setter Property="ToolTip" Value="Linear Gradient Brush" />
+                                                                        <Setter TargetName="Icon" Property="Fill">
                                                                             <Setter.Value>
                                                                                 <LinearGradientBrush StartPoint="0,.5" EndPoint="1,.5">
-                                                                                    <GradientStop Color="#FF403C3C" Offset="0"></GradientStop>
-                                                                                    <GradientStop Color="White" Offset="1"></GradientStop>
+                                                                                    <GradientStop Offset="0" Color="#FF403C3C" />
+                                                                                    <GradientStop Offset="1" Color="White" />
                                                                                 </LinearGradientBrush>
                                                                             </Setter.Value>
                                                                         </Setter>
                                                                     </DataTrigger>
                                                                     <DataTrigger Binding="{Binding}" Value="Radial">
-                                                                        <Setter Property="ToolTip" Value="Radial Gradient Brush"/>
-                                                                        <Setter Property="Fill" TargetName="Icon">
+                                                                        <Setter Property="ToolTip" Value="Radial Gradient Brush" />
+                                                                        <Setter TargetName="Icon" Property="Fill">
                                                                             <Setter.Value>
                                                                                 <RadialGradientBrush>
-                                                                                    <GradientStop Color="#FF403C3C" Offset="1"/>
-                                                                                    <GradientStop Color="White"/>
+                                                                                    <GradientStop Offset="1" Color="#FF403C3C" />
+                                                                                    <GradientStop Color="White" />
                                                                                 </RadialGradientBrush>
                                                                             </Setter.Value>
                                                                         </Setter>
@@ -312,16 +358,19 @@
                                             </ListBox.ItemContainerStyle>
                                         </ListBox>
 
-                                        <!-- Color selector -->
-                                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Margin="0,5,0,0">
+                                        <!--  Color selector  -->
+                                        <ScrollViewer
+                                            Margin="0,5,0,0"
+                                            HorizontalScrollBarVisibility="Disabled"
+                                            VerticalScrollBarVisibility="Disabled">
                                             <ScrollViewer.Style>
                                                 <Style TargetType="ScrollViewer">
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="None">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Predefined">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -336,100 +385,136 @@
                                                     <ColumnDefinition Width="20" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <!-- saturation / brightness selector -->
+                                                <!--  saturation / brightness selector  -->
                                                 <Grid Grid.Column="0" ClipToBounds="true">
-                                                    <local:SaturationBrightnessSelector x:Name="SV" MinHeight="128"
-                                                                                       Saturation="{Binding Path=Saturation,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" 
-                                                                                       Brightness="{Binding Path=Brightness,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
-                                                                                       Hue="{Binding ElementName=H,Path=Hue}"/>
-                                                                                                        
-                                                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-6,-6,0,0" Width="12" Height="12"  >
+                                                    <local:SaturationBrightnessSelector
+                                                        x:Name="SV"
+                                                        MinHeight="128"
+                                                        Brightness="{Binding Path=Brightness, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        Hue="{Binding ElementName=H, Path=Hue}"
+                                                        Saturation="{Binding Path=Saturation, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                                    <Grid
+                                                        Width="12"
+                                                        Height="12"
+                                                        Margin="-6,-6,0,0"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top">
                                                         <Ellipse Stroke="Black" />
-                                                        <Ellipse Stroke="White" Margin="1" />
+                                                        <Ellipse Margin="1" Stroke="White" />
                                                         <Grid.RenderTransform>
-                                                            <TranslateTransform X="{Binding ElementName=SV,Path=SaturationOffset}" Y="{Binding ElementName=SV,Path=BrightnessOffset}" />
+                                                            <TranslateTransform X="{Binding ElementName=SV, Path=SaturationOffset}" Y="{Binding ElementName=SV, Path=BrightnessOffset}" />
                                                         </Grid.RenderTransform>
                                                     </Grid>
                                                 </Grid>
 
-                                                <!-- hue selector -->
-                                                <local:HueSelector x:Name="H" Grid.Column="2"
-                                                                  Hue="{Binding Path=Hue,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" />
-                                                <Path Grid.Column="2" HorizontalAlignment="Left" Margin="0,-5,0,5" Stroke="White" Fill="Black" Data="M 0 0 L 7 5 L 0 10Z">
+                                                <!--  hue selector  -->
+                                                <local:HueSelector
+                                                    x:Name="H"
+                                                    Grid.Column="2"
+                                                    Hue="{Binding Path=Hue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                <Path
+                                                    Grid.Column="2"
+                                                    Margin="0,-5,0,5"
+                                                    HorizontalAlignment="Left"
+                                                    Data="M 0 0 L 7 5 L 0 10Z"
+                                                    Fill="Black"
+                                                    Stroke="White">
                                                     <Path.RenderTransform>
-                                                        <TranslateTransform Y="{Binding ElementName=H,Path=HueOffset}" />
+                                                        <TranslateTransform Y="{Binding ElementName=H, Path=HueOffset}" />
                                                     </Path.RenderTransform>
                                                 </Path>
-                                                <Path Grid.Column="2" HorizontalAlignment="Right" Margin="0,-5,0,5" Stroke="White" Fill="Black" Data="M 0 5 L 7 0 L 7 10 Z">
+                                                <Path
+                                                    Grid.Column="2"
+                                                    Margin="0,-5,0,5"
+                                                    HorizontalAlignment="Right"
+                                                    Data="M 0 5 L 7 0 L 7 10 Z"
+                                                    Fill="Black"
+                                                    Stroke="White">
                                                     <Path.RenderTransform>
-                                                        <TranslateTransform Y="{Binding ElementName=H,Path=HueOffset}" />
+                                                        <TranslateTransform Y="{Binding ElementName=H, Path=HueOffset}" />
                                                     </Path.RenderTransform>
                                                 </Path>
 
-                                                <!-- alpha selector -->
+                                                <!--  alpha selector  -->
                                                 <Rectangle Grid.Column="4" Fill="{StaticResource AlphaBrush}" />
-                                                <local:AlphaSelector x:Name="A" Grid.Column="4" 
-                                                                     Alpha="{Binding Path=Alpha,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" />
-                                                <Path Grid.Column="4" HorizontalAlignment="Left" Margin="0,-5,0,5" Stroke="White" Fill="Black" Data="M 0 0 L 7 5 L 0 10Z">
+                                                <local:AlphaSelector
+                                                    x:Name="A"
+                                                    Grid.Column="4"
+                                                    Alpha="{Binding Path=Alpha, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                <Path
+                                                    Grid.Column="4"
+                                                    Margin="0,-5,0,5"
+                                                    HorizontalAlignment="Left"
+                                                    Data="M 0 0 L 7 5 L 0 10Z"
+                                                    Fill="Black"
+                                                    Stroke="White">
                                                     <Path.RenderTransform>
-                                                        <TranslateTransform Y="{Binding ElementName=A,Path=AlphaOffset}" />
+                                                        <TranslateTransform Y="{Binding ElementName=A, Path=AlphaOffset}" />
                                                     </Path.RenderTransform>
                                                 </Path>
-                                                <Path Grid.Column="4" HorizontalAlignment="Right" Margin="0,-5,0,5" Stroke="White" Fill="Black" Data="M 0 5 L 7 0 L 7 10 Z">
+                                                <Path
+                                                    Grid.Column="4"
+                                                    Margin="0,-5,0,5"
+                                                    HorizontalAlignment="Right"
+                                                    Data="M 0 5 L 7 0 L 7 10 Z"
+                                                    Fill="Black"
+                                                    Stroke="White">
                                                     <Path.RenderTransform>
-                                                        <TranslateTransform Y="{Binding ElementName=A,Path=AlphaOffset}" />
+                                                        <TranslateTransform Y="{Binding ElementName=A, Path=AlphaOffset}" />
                                                     </Path.RenderTransform>
                                                 </Path>
                                             </Grid>
                                         </ScrollViewer>
 
-                                        <!-- Predefined colors viewer -->
+                                        <!--  Predefined colors viewer  -->
                                         <Grid Margin="0,5,0,0">
-                                            <!-- Hide when brush type is None -->
+                                            <!--  Hide when brush type is None  -->
                                             <Grid.Style>
                                                 <Style TargetType="Grid">
-                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Predefined">
-                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                            <Setter Property="Visibility" Value="Visible" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
                                             </Grid.Style>
 
-                                            <ListBox MaxHeight="300" 
-                                                     ItemsSource="{Binding WpfBrushTypes, RelativeSource={RelativeSource TemplatedParent}}"
-                                                     SelectedValuePath="Brush"
-                                                     SelectedValue="{Binding Brush, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
-                                              <ListBox.ItemTemplate>
-                                                <DataTemplate>
-                                                  <StackPanel Orientation="Horizontal">
-                                                    <Border Background="{Binding Brush}"
-                                                      Width="30"
-                                                      Height="15"
-                                                      Margin="2"
-                                                      BorderThickness="1"
-                                                      BorderBrush="Black" />
-                                                    <TextBlock Text="{Binding Name}"
-                                                      VerticalAlignment="Center" />
-                                                  </StackPanel>
-                                                  </DataTemplate>
-                                              </ListBox.ItemTemplate>
+                                            <ListBox
+                                                MaxHeight="300"
+                                                ItemsSource="{Binding WpfBrushTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                SelectedValue="{Binding Brush, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                SelectedValuePath="Brush">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Border
+                                                                Width="30"
+                                                                Height="15"
+                                                                Margin="2"
+                                                                Background="{Binding Brush}"
+                                                                BorderBrush="Black"
+                                                                BorderThickness="1" />
+                                                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
                                             </ListBox>
                                         </Grid>
 
-                                        <!-- Current color viewer -->
-                                        <Grid Margin="0,5,0,0" Height="20">
+                                        <!--  Current color viewer  -->
+                                        <Grid Height="20" Margin="0,5,0,0">
 
-                                            <!-- Hide when brush type is None -->
+                                            <!--  Hide when brush type is None  -->
                                             <Grid.Style>
                                                 <Style TargetType="Grid">
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="None">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Predefined">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -443,20 +528,25 @@
 
                                             <Rectangle>
                                                 <Rectangle.Fill>
-                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" />
                                                 </Rectangle.Fill>
                                             </Rectangle>
 
-                                            <TextBox Text="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" 
-                                                     local:TextBoxBehavior.SelectAllTextOnFocus="True"
-                                                     Grid.Column="2" MinWidth="100">
+                                            <TextBox
+                                                Grid.Column="2"
+                                                MinWidth="100"
+                                                local:TextBoxBehavior.SelectAllTextOnFocus="True"
+                                                Text="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}">
                                                 <TextBox.Style>
                                                     <Style TargetType="TextBox">
                                                         <Setter Property="Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="TextBox">
-                                                                    <Border BorderBrush="Black" BorderThickness="1" Padding="0">
-                                                                        <ScrollViewer x:Name="PART_ContentHost" Margin="0"/>
+                                                                    <Border
+                                                                        Padding="0"
+                                                                        BorderBrush="Black"
+                                                                        BorderThickness="1">
+                                                                        <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
                                                                     </Border>
                                                                 </ControlTemplate>
                                                             </Setter.Value>
@@ -466,86 +556,99 @@
                                             </TextBox>
                                         </Grid>
 
-                                        <!-- Gradient Stop editor -->
+                                        <!--  Gradient Stop editor  -->
                                         <Grid Margin="0,5,0,0" Focusable="False">
                                             <Grid.Style>
                                                 <Style TargetType="Grid">
-                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Linear">
-                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                            <Setter Property="Visibility" Value="Visible" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Radial">
-                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                            <Setter Property="Visibility" Value="Visible" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
                                             </Grid.Style>
 
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition Width="5"/>
-                                                <ColumnDefinition Width="Auto" MinWidth="45"/>                                                
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="5" />
+                                                <ColumnDefinition Width="Auto" MinWidth="45" />
                                             </Grid.ColumnDefinitions>
 
                                             <StackPanel Grid.Column="0" Focusable="False">
-                                
-                                                <!-- Click to add gradient stop -->
-                                                <local:GradientStopAdder Height="20" Margin="7,0"
-                                                                         Focusable="False"
-                                                                         IsTabStop="False"
-                                                                         FocusVisualStyle="{x:Null}"                                                                         
-                                                                         ColorBox="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                                         Background="{Binding Brush, RelativeSource={RelativeSource TemplatedParent}}">
+
+                                                <!--  Click to add gradient stop  -->
+                                                <local:GradientStopAdder
+                                                    Height="20"
+                                                    Margin="7,0"
+                                                    Background="{Binding Brush, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ColorBox="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                    FocusVisualStyle="{x:Null}"
+                                                    Focusable="False"
+                                                    IsTabStop="False">
                                                     <Button.Style>
                                                         <Style TargetType="Button">
                                                             <Setter Property="Template">
                                                                 <Setter.Value>
                                                                     <ControlTemplate TargetType="Button">
-                                                                        <Border BorderThickness="0" Background="{TemplateBinding Background}"/>
+                                                                        <Border Background="{TemplateBinding Background}" BorderThickness="0" />
                                                                     </ControlTemplate>
                                                                 </Setter.Value>
                                                             </Setter>
                                                         </Style>
                                                     </Button.Style>
-                                                </local:GradientStopAdder>         
+                                                </local:GradientStopAdder>
 
-                                                <!-- gradient stops -->
-                                                <ListBox x:Name="lbGradientStops"
-                                                         ItemsSource="{Binding Path=Gradients, RelativeSource={RelativeSource TemplatedParent}}"
-                                                         SelectedItem="{Binding SelectedGradient,RelativeSource={RelativeSource TemplatedParent}}"
-                                                         Background="{x:Null}" Style="{x:Null}" BorderThickness="0"
-                                                         FocusVisualStyle="{x:Null}" Focusable="False" IsTabStop="False">
+                                                <!--  gradient stops  -->
+                                                <ListBox
+                                                    x:Name="lbGradientStops"
+                                                    Background="{x:Null}"
+                                                    BorderThickness="0"
+                                                    FocusVisualStyle="{x:Null}"
+                                                    Focusable="False"
+                                                    IsTabStop="False"
+                                                    ItemsSource="{Binding Path=Gradients, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    SelectedItem="{Binding SelectedGradient, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Style="{x:Null}">
                                                     <ListBox.ItemContainerStyle>
                                                         <Style TargetType="ListBoxItem">
-                                                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                                                            <Setter Property="IsTabStop" Value="False"/>
+                                                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                                            <Setter Property="IsTabStop" Value="False" />
                                                             <Setter Property="Template">
                                                                 <Setter.Value>
                                                                     <ControlTemplate TargetType="ListBoxItem">
-                                                                        <local:GradientStopSlider x:Name="PART_Slider"
-                                                                                                  BorderBrush="Black"
-                                                                                                  IsTabStop="False"
-                                                                                                  Style="{StaticResource GradientStopSliderStyle}" 
-                                                                                                  Value="{Binding Offset}" Minimum="0" Maximum="1"
-                                                                                                  ColorBox="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}"
-                                                                                                  SelectedGradient="{Binding}"
-                                                                                                  Margin="0,0,0,2">
+                                                                        <local:GradientStopSlider
+                                                                            x:Name="PART_Slider"
+                                                                            Margin="0,0,0,2"
+                                                                            BorderBrush="Black"
+                                                                            ColorBox="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}"
+                                                                            IsTabStop="False"
+                                                                            Maximum="1"
+                                                                            Minimum="0"
+                                                                            SelectedGradient="{Binding}"
+                                                                            Style="{StaticResource GradientStopSliderStyle}"
+                                                                            Value="{Binding Offset}">
                                                                             <local:GradientStopSlider.Background>
-                                                                                <SolidColorBrush Color="{Binding Color}"/>
+                                                                                <SolidColorBrush Color="{Binding Color}" />
                                                                             </local:GradientStopSlider.Background>
                                                                         </local:GradientStopSlider>
 
                                                                         <ControlTemplate.Triggers>
                                                                             <Trigger Property="IsMouseOver" Value="True">
-                                                                                <Setter Property="BorderBrush" TargetName="PART_Slider" Value="Orange"/>
+                                                                                <Setter TargetName="PART_Slider" Property="BorderBrush" Value="Orange" />
                                                                             </Trigger>
                                                                             <Trigger Property="IsSelected" Value="True">
-                                                                                <Setter Property="BorderBrush" TargetName="PART_Slider" Value="Blue"/>
+                                                                                <Setter TargetName="PART_Slider" Property="BorderBrush" Value="Blue" />
                                                                                 <!--<Setter Property="BorderThickness" TargetName="PART_Slider" Value="2"/>-->
-                                                                                <Setter Property="Effect" TargetName="PART_Slider">
+                                                                                <Setter TargetName="PART_Slider" Property="Effect">
                                                                                     <Setter.Value>
-                                                                                        <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"></DropShadowEffect>
+                                                                                        <DropShadowEffect
+                                                                                            BlurRadius="2"
+                                                                                            Direction="270"
+                                                                                            ShadowDepth="2" />
                                                                                     </Setter.Value>
                                                                                 </Setter>
                                                                             </Trigger>
@@ -558,7 +661,7 @@
 
                                                     <ListBox.ItemsPanel>
                                                         <ItemsPanelTemplate>
-                                                            <Grid IsItemsHost="True"/>
+                                                            <Grid IsItemsHost="True" />
                                                         </ItemsPanelTemplate>
                                                     </ListBox.ItemsPanel>
 
@@ -566,36 +669,43 @@
 
                                             </StackPanel>
 
-                                            <Button Grid.Column="2"
-                                                    Command="{x:Static local:ColorBox.ReverseGradientStop}"
-                                                    Background="Transparent"
-                                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                                    ToolTip="Reverse gradient stops">
+                                            <Button
+                                                Grid.Column="2"
+                                                Background="Transparent"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                Command="{x:Static local:ColorBox.ReverseGradientStop}"
+                                                ToolTip="Reverse gradient stops">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="Button">
-                                                                    <Border Name="Border"
-                                                                            BorderThickness="1"                                                                            
-                                                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                                                            Background="{TemplateBinding Background}">
-                                                                        <Path x:Name="Icon"
-                                                                              Data="F1 M 10.0001,27L 10,16L 29.25,16L 25,12L 31.5,12L 38,18L 31.5,24L 25,24L 29.25,20L 14,20L 14,23.5L 10.0001,27 Z M 38,21L 38,32L 18.75,32L 23,36L 16.5,36L 10,30L 16.5,24L 23,24L 18.75,28L 34,28L 34,24.5L 38,21 Z"
-                                                                              StrokeThickness="0" Fill="Black" Height="16" Width="20" Stretch="Fill"/>
+                                                                    <Border
+                                                                        Name="Border"
+                                                                        Background="{TemplateBinding Background}"
+                                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                                        BorderThickness="1">
+                                                                        <Path
+                                                                            x:Name="Icon"
+                                                                            Width="20"
+                                                                            Height="16"
+                                                                            Data="F1 M 10.0001,27L 10,16L 29.25,16L 25,12L 31.5,12L 38,18L 31.5,24L 25,24L 29.25,20L 14,20L 14,23.5L 10.0001,27 Z M 38,21L 38,32L 18.75,32L 23,36L 16.5,36L 10,30L 16.5,24L 23,24L 18.75,28L 34,28L 34,24.5L 38,21 Z"
+                                                                            Fill="Black"
+                                                                            Stretch="Fill"
+                                                                            StrokeThickness="0" />
                                                                     </Border>
                                                                     <ControlTemplate.Triggers>
                                                                         <Trigger Property="IsMouseOver" Value="True">
                                                                             <Setter TargetName="Icon" Property="Fill">
                                                                                 <Setter.Value>
-                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}"></SolidColorBrush>
+                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}" />
                                                                                 </Setter.Value>
                                                                             </Setter>
                                                                         </Trigger>
                                                                         <Trigger Property="IsPressed" Value="True">
-                                                                            <Setter Property="BorderBrush" TargetName="Border">
+                                                                            <Setter TargetName="Border" Property="BorderBrush">
                                                                                 <Setter.Value>
-                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}"></SolidColorBrush>
+                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}" />
                                                                                 </Setter.Value>
                                                                             </Setter>
                                                                         </Trigger>
@@ -605,62 +715,66 @@
                                                         </Setter>
                                                     </Style>
                                                 </Button.Style>
-                                            </Button>                                                                               
-                                            
+                                            </Button>
+
                                         </Grid>
 
-                                        <!-- Additional Properties -->
-                                        <StackPanel Margin="0,5,0,0" >
+                                        <!--  Additional Properties  -->
+                                        <StackPanel Margin="0,5,0,0">
                                             <StackPanel.Style>
                                                 <Style TargetType="StackPanel">
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="None">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Predefined">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
                                             </StackPanel.Style>
 
-                                            <ToggleButton x:Name="PART_AdditionalPropertyOpen"
-                                                          BorderBrush="{TemplateBinding BorderBrush}"
-                                                          ToolTip="Additional Properties"
-                                                          Height="20">
+                                            <ToggleButton
+                                                x:Name="PART_AdditionalPropertyOpen"
+                                                Height="20"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                ToolTip="Additional Properties">
                                                 <ToggleButton.Style>
                                                     <Style TargetType="ToggleButton">
                                                         <Setter Property="Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="ToggleButton">
-                                                                    <Border x:Name="Border"
-                                                                            BorderThickness="1"
-                                                                            Background="Transparent"
-                                                                            BorderBrush="{TemplateBinding BorderBrush}">
-                                                                        <Path x:Name="Icon"
-                                                                              Data="M518.000,395.000C509.500,377.166,484.333,306.833,467.000,288C449.666,269.166,405.500,262.000,414,282C422.499,301.999,484.166,408,518.000,408C551.833,408,609,301.999,617.000,282C625.000,262.000,582.500,269.166,566.000,288C549.500,306.833,526.000,377.166,518.000,395.000"
-                                                                              Height="12" Width="18"
-                                                                              Fill="{TemplateBinding Foreground}"
-                                                                              Stretch="Fill"
-                                                                              VerticalAlignment="Center"
-                                                                              HorizontalAlignment="Center"
-                                                                              RenderTransformOrigin=".5,.5"/>
+                                                                    <Border
+                                                                        x:Name="Border"
+                                                                        Background="Transparent"
+                                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                                        BorderThickness="1">
+                                                                        <Path
+                                                                            x:Name="Icon"
+                                                                            Width="18"
+                                                                            Height="12"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"
+                                                                            Data="M518.000,395.000C509.500,377.166,484.333,306.833,467.000,288C449.666,269.166,405.500,262.000,414,282C422.499,301.999,484.166,408,518.000,408C551.833,408,609,301.999,617.000,282C625.000,262.000,582.500,269.166,566.000,288C549.500,306.833,526.000,377.166,518.000,395.000"
+                                                                            Fill="{TemplateBinding Foreground}"
+                                                                            RenderTransformOrigin=".5,.5"
+                                                                            Stretch="Fill" />
                                                                     </Border>
 
                                                                     <ControlTemplate.Triggers>
                                                                         <Trigger Property="IsChecked" Value="True">
                                                                             <Setter TargetName="Icon" Property="RenderTransform">
                                                                                 <Setter.Value>
-                                                                                    <ScaleTransform ScaleY="-1"/>
+                                                                                    <ScaleTransform ScaleY="-1" />
                                                                                 </Setter.Value>
                                                                             </Setter>
                                                                         </Trigger>
                                                                         <Trigger Property="IsMouseOver" Value="True">
                                                                             <Setter TargetName="Icon" Property="Fill">
                                                                                 <Setter.Value>
-                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}"></SolidColorBrush>
+                                                                                    <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ColorBox}}}" />
                                                                                 </Setter.Value>
-                                                                            </Setter>                                                                          
+                                                                            </Setter>
                                                                         </Trigger>
                                                                     </ControlTemplate.Triggers>
                                                                 </ControlTemplate>
@@ -671,148 +785,263 @@
                                             </ToggleButton>
 
 
-                                            <StackPanel Margin="0,5"
-                                                        Visibility="{Binding ElementName=PART_AdditionalPropertyOpen, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                                            <StackPanel Margin="0,5" Visibility="{Binding ElementName=PART_AdditionalPropertyOpen, Path=IsChecked, Converter={StaticResource BoolToVis}}">
 
-                                                <!-- Predefined brush -->
+                                                <!--  Predefined brush  -->
                                                 <DockPanel Margin="0,5,0,0">
                                                     <DockPanel.Style>
                                                         <Style TargetType="DockPanel">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </Style>
                                                     </DockPanel.Style>
 
-                                                    <TextBlock Text="Opacity" VerticalAlignment="Center"/>
-                                                    <Slider Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                    IsMoveToPointEnabled="True" Minimum="0" Maximum="1" Margin="10,0,0,0"/>
+                                                    <TextBlock VerticalAlignment="Center" Text="Opacity" />
+                                                    <Slider
+                                                        Margin="10,0,0,0"
+                                                        IsMoveToPointEnabled="True"
+                                                        Maximum="1"
+                                                        Minimum="0"
+                                                        Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                                 </DockPanel>
 
-                                                <!-- Solid brush -->
+                                                <!--  Solid brush  -->
                                                 <DockPanel Margin="0,5,0,0">
                                                     <DockPanel.Style>
                                                         <Style TargetType="DockPanel">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Solid">
-                                                                    <Setter Property="Grid.Visibility" Value="Visible"/>
+                                                                    <Setter Property="Grid.Visibility" Value="Visible" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </DockPanel.Style>
 
-                                                    <TextBlock Text="Opacity" VerticalAlignment="Center"/>
-                                                    <Slider Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                    IsMoveToPointEnabled="True" Minimum="0" Maximum="1" Margin="10,0,0,0"/>
+                                                    <TextBlock VerticalAlignment="Center" Text="Opacity" />
+                                                    <Slider
+                                                        Margin="10,0,0,0"
+                                                        IsMoveToPointEnabled="True"
+                                                        Maximum="1"
+                                                        Minimum="0"
+                                                        Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                                 </DockPanel>
 
-                                                <!-- Linear brush -->
+                                                <!--  Linear brush  -->
                                                 <Grid>
 
                                                     <Grid.Style>
                                                         <Style TargetType="Grid">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Linear">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                    <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Grid.Style>
 
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto"/>
-                                                        <ColumnDefinition Width="5"/>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="5" />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
                                                     </Grid.ColumnDefinitions>
                                                     <Grid.RowDefinitions>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
                                                     </Grid.RowDefinitions>
 
-                                                    <TextBlock Text="Start Point" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="0" Grid.Column="2" Value="{Binding StartX, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                                    <local:DoubleUpDown Grid.Row="0" Grid.Column="3" Value="{Binding StartY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Start Point" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="0"
+                                                        Grid.Column="2"
+                                                        Value="{Binding StartX, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="0"
+                                                        Grid.Column="3"
+                                                        Value="{Binding StartY, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="End Point" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="1" Grid.Column="2" Value="{Binding EndX, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                                    <local:DoubleUpDown Grid.Row="1" Grid.Column="3" Value="{Binding EndY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="End Point" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="1"
+                                                        Grid.Column="2"
+                                                        Value="{Binding EndX, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="1"
+                                                        Grid.Column="3"
+                                                        Value="{Binding EndY, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Mapping Mode" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <ComboBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="2"
-                                                      ItemsSource="{Binding MappingModeTypes, RelativeSource={RelativeSource TemplatedParent}}"
-                                                      SelectedItem="{Binding MappingMode, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Mapping Mode" />
+                                                    <ComboBox
+                                                        Grid.Row="2"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        ItemsSource="{Binding MappingModeTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        SelectedItem="{Binding MappingMode, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Spread Method" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <ComboBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="2"
-                                                      ItemsSource="{Binding SpreadMethodTypes, RelativeSource={RelativeSource TemplatedParent}}"
-                                                      SelectedItem="{Binding SpreadMethod, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Spread Method" />
+                                                    <ComboBox
+                                                        Grid.Row="3"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        ItemsSource="{Binding SpreadMethodTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        SelectedItem="{Binding SpreadMethod, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Opacity" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
-                                                    <Slider Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                    IsMoveToPointEnabled="True" Margin="2"
-                                                    Minimum="0" Maximum="1" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                                    <TextBlock
+                                                        Grid.Row="4"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Opacity" />
+                                                    <Slider
+                                                        Grid.Row="4"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        IsMoveToPointEnabled="True"
+                                                        Maximum="1"
+                                                        Minimum="0"
+                                                        Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                                 </Grid>
 
-                                                <!-- Radial brush -->
+                                                <!--  Radial brush  -->
                                                 <Grid>
                                                     <Grid.Style>
                                                         <Style TargetType="Grid">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding ElementName=listAvailableBrushType, Path=SelectedValue}" Value="Radial">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                    <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Grid.Style>
 
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto"/>
-                                                        <ColumnDefinition Width="5"/>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="5" />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
                                                     </Grid.ColumnDefinitions>
                                                     <Grid.RowDefinitions>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
-                                                        <RowDefinition/>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                        <RowDefinition />
                                                     </Grid.RowDefinitions>
 
-                                                    <TextBlock Text="Gradient Origin" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="0" Grid.Column="2" Value="{Binding GradientOriginX, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                                    <local:DoubleUpDown Grid.Row="0" Grid.Column="3" Value="{Binding GradientOriginY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Gradient Origin" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="0"
+                                                        Grid.Column="2"
+                                                        Value="{Binding GradientOriginX, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="0"
+                                                        Grid.Column="3"
+                                                        Value="{Binding GradientOriginY, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Center" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="1" Grid.Column="2" Value="{Binding CenterX, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                                    <local:DoubleUpDown Grid.Row="1" Grid.Column="3" Value="{Binding CenterY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Center" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="1"
+                                                        Grid.Column="2"
+                                                        Value="{Binding CenterX, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="1"
+                                                        Grid.Column="3"
+                                                        Value="{Binding CenterY, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Radius X" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Value="{Binding RadiusX, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Radius X" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="2"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Value="{Binding RadiusX, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Radius Y" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <local:DoubleUpDown Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Value="{Binding RadiusY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Radius Y" />
+                                                    <local:DoubleUpDown
+                                                        Grid.Row="3"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Value="{Binding RadiusY, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Mapping Mode" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <ComboBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="2"
-                                                      ItemsSource="{Binding MappingModeTypes, RelativeSource={RelativeSource TemplatedParent}}"
-                                                      SelectedItem="{Binding MappingMode, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <TextBlock
+                                                        Grid.Row="4"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Mapping Mode" />
+                                                    <ComboBox
+                                                        Grid.Row="4"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        ItemsSource="{Binding MappingModeTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        SelectedItem="{Binding MappingMode, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                                                    <TextBlock Text="Spread Method" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
-                                                    <ComboBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="2"
-                                                      ItemsSource="{Binding SpreadMethodTypes, RelativeSource={RelativeSource TemplatedParent}}"
-                                                      SelectedItem="{Binding SpreadMethod, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                                    <TextBlock Text="Opacity" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
-                                                    <Slider Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                    IsMoveToPointEnabled="True" Margin="2"
-                                                    Minimum="0" Maximum="1" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                                    <TextBlock
+                                                        Grid.Row="5"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Spread Method" />
+                                                    <ComboBox
+                                                        Grid.Row="5"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        ItemsSource="{Binding SpreadMethodTypes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        SelectedItem="{Binding SpreadMethod, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    <TextBlock
+                                                        Grid.Row="6"
+                                                        Grid.Column="0"
+                                                        VerticalAlignment="Center"
+                                                        Text="Opacity" />
+                                                    <Slider
+                                                        Grid.Row="6"
+                                                        Grid.Column="2"
+                                                        Grid.ColumnSpan="2"
+                                                        Margin="2"
+                                                        IsMoveToPointEnabled="True"
+                                                        Maximum="1"
+                                                        Minimum="0"
+                                                        Value="{Binding Brush.Opacity, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                                 </Grid>
 
                                                 <!--<TabControl Margin="2">
@@ -828,13 +1057,13 @@
                                                                                 <RowDefinition Height="24"/>
                                                                                 <RowDefinition Height="*"/>
                                                                             </Grid.RowDefinitions>
-                                                                            
+
                                                                             <UniformGrid Name="TabPanel"
                                                                                  Rows="1"
                                                                                  IsItemsHost="true"
                                                                                  KeyboardNavigation.TabIndex="1"/>
 
-                                                                            <Border Grid.Row="1" MinHeight="50">                                                                              
+                                                                            <Border Grid.Row="1" MinHeight="50">
                                                                                 <ContentPresenter VerticalAlignment="Center"  ContentSource="SelectedContent" />
                                                                             </Border>
                                                                         </Grid>
@@ -910,9 +1139,9 @@
                                                             <local:DoubleUpDown MinWidth="50" Value="{Binding TransformOriginY, RelativeSource={RelativeSource TemplatedParent}}"/>
                                                         </StackPanel>
                                                     </TabItem>
-                                        
+
                                                 </TabControl>-->
-                                                
+
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>

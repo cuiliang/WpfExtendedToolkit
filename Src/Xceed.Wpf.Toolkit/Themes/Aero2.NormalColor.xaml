@@ -1,23 +1,24 @@
-﻿<!--***********************************************************************************
+﻿<!--
+    ***********************************************************************************
+    
+    Toolkit for WPF
+    
+    Copyright (C) 2007-2018 Xceed Software Inc.
+    
+    This program is provided to you under the terms of the Microsoft Public
+    License (Ms-PL) as published at http://wpftoolkit.codeplex.com/license
+    
+    For more features, controls, and fast professional support,
+    pick up the Plus Edition at https://xceed.com/xceed-toolkit-plus-for-wpf/
+    
+    Stay informed: follow @datagrid on Twitter or Like http://facebook.com/datagrids
+    
+    **********************************************************************************
+-->
 
-   Toolkit for WPF
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-   Copyright (C) 2007-2018 Xceed Software Inc.
-
-   This program is provided to you under the terms of the Microsoft Public
-   License (Ms-PL) as published at http://wpftoolkit.codeplex.com/license 
-
-   For more features, controls, and fast professional support,
-   pick up the Plus Edition at https://xceed.com/xceed-toolkit-plus-for-wpf/
-
-   Stay informed: follow @datagrid on Twitter or Like http://facebook.com/datagrids
-
-  **********************************************************************************-->
-
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-   <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary.MergedDictionaries>
 
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/Themes/Aero2/Brushes.xaml" />
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/Themes/Aero2/Buttons.xaml" />
@@ -50,7 +51,7 @@
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/RangeSlider/Themes/Aero2.NormalColor.xaml" />
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/RichTextBoxFormatBar/Themes/Aero2.NormalColor.xaml" />
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/SplitButton/Themes/Aero2.NormalColor.xaml" />
-        <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/PropertyGrid/Themes/Aero2.NormalColor.xaml" />        
+        <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/PropertyGrid/Themes/Aero2.NormalColor.xaml" />
 
 
         <ResourceDictionary Source="/DotNetProjects.Wpf.Extended.Toolkit;component/TimePicker/Themes/Aero2.NormalColor.xaml" />
