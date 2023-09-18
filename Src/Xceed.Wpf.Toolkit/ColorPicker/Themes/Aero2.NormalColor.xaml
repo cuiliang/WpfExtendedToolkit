@@ -173,7 +173,7 @@
             <Setter.Value>
                 <DataTemplate>
                     <Border Background="{StaticResource CheckerBrush}" CornerRadius="3">
-                        <Rectangle Fill="{Binding SelectedColor, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ColorPicker}, Converter={StaticResource ColorToSolidColorBrushConverter}}" />
+            <Rectangle RadiusX="3" RadiusY="3" Fill="{Binding SelectedColor, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ColorPicker}, Converter={StaticResource ColorToSolidColorBrushConverter}}" />
                     </Border>
                 </DataTemplate>
             </Setter.Value>
@@ -264,6 +264,7 @@
                     <Grid>
                         <ToggleButton
                             x:Name="PART_ColorPickerToggleButton"
+                            Height="{TemplateBinding Height}"
                             MinHeight="22"
                             Padding="{TemplateBinding Padding}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
