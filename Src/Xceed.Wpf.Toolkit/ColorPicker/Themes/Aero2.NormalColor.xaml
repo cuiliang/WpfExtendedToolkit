@@ -88,11 +88,7 @@
 
     <DataTemplate x:Key="ColorItemTemplate">
         <Grid>
-            <Border
-                Margin="2,2,2,2"
-                Background="{StaticResource CheckerBrush}"
-                BorderBrush="{DynamicResource {x:Static themes:ResourceKeys.ControlNormalBorderKey}}"
-                BorderThickness="1">
+            <Border Margin="2,2,2,2" Background="{StaticResource CheckerBrush}" BorderBrush="{DynamicResource {x:Static themes:ResourceKeys.ControlNormalBorderKey}}" BorderThickness="1">
                 <Rectangle Width="14" Height="14">
                     <Rectangle.Style>
                         <Style TargetType="Rectangle">
@@ -140,11 +136,7 @@
                                 RenderPressed="{TemplateBinding IsPressed}"
                                 Visibility="{Binding ShowDropDownButton, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ColorPicker}, Converter={StaticResource BooleanToVisibilityConverter}}">
 
-                                <Grid
-                                    x:Name="arrowGlyph"
-                                    Grid.Column="1"
-                                    Margin="5"
-                                    IsHitTestVisible="False">
+                                <Grid x:Name="arrowGlyph" Grid.Column="1" Margin="5" IsHitTestVisible="False">
                                     <Path
                                         x:Name="Arrow"
                                         Width="9"
@@ -172,9 +164,9 @@
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <Border Background="{StaticResource CheckerBrush}" CornerRadius="3">
-            <Rectangle RadiusX="3" RadiusY="3" Fill="{Binding SelectedColor, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ColorPicker}, Converter={StaticResource ColorToSolidColorBrushConverter}}" />
-                    </Border>
+                    <!--<Border Background="{StaticResource CheckerBrush}" CornerRadius="3">-->
+                    <Rectangle Fill="{Binding SelectedColor, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ColorPicker}, Converter={StaticResource ColorToSolidColorBrushConverter}}" RadiusX="3" RadiusY="3" Stroke="#90909090" />
+                    <!--</Border>-->
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -271,8 +263,8 @@
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            Foreground="{TemplateBinding Foreground}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            Foreground="{TemplateBinding Foreground}"
                             IsChecked="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                             IsHitTestVisible="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InverseBoolConverter}}"
                             IsTabStop="True"
@@ -280,9 +272,7 @@
                             <Grid Margin="2">
                                 <ContentControl x:Name="ColorOnly" Style="{StaticResource ColorDisplayStyle}" />
 
-                                <Border
-                                    x:Name="ColorAndName"
-                                    Visibility="Hidden">
+                                <Border x:Name="ColorAndName" Visibility="Hidden">
                                     <StackPanel Orientation="Horizontal">
                                         <ContentControl
                                             Width="20"
@@ -318,15 +308,8 @@
                                     </Style.Triggers>
                                 </Style>
                             </Popup.Resources>
-                            <Border
-                                Padding="3"
-                                Background="{TemplateBinding DropDownBackground}"
-                                BorderBrush="{StaticResource PopupDarkBorderBrush}"
-                                BorderThickness="1">
-                                <TabControl
-                                    x:Name="ColorPickerTabControl"
-                                    Background="Transparent"
-                                    SelectedIndex="{Binding ColorMode, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorModeToTabItemSelectedConverter}}">
+                            <Border Padding="3" Background="{TemplateBinding DropDownBackground}" BorderBrush="{StaticResource PopupDarkBorderBrush}" BorderThickness="1">
+                                <TabControl x:Name="ColorPickerTabControl" Background="Transparent" SelectedIndex="{Binding ColorMode, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorModeToTabItemSelectedConverter}}">
                                     <local:ColorPickerTabItem
                                         x:Name="StandardTabItem"
                                         Background="{TemplateBinding TabBackground}"
@@ -354,11 +337,7 @@
                                                         Background="{TemplateBinding HeaderBackground}"
                                                         Foreground="{TemplateBinding HeaderForeground}"
                                                         Text="{TemplateBinding AvailableColorsHeader}" />
-                                                    <ListBox
-                                                        x:Name="PART_AvailableColors"
-                                                        Grid.Row="1"
-                                                        ItemsSource="{Binding AvailableColors, RelativeSource={RelativeSource TemplatedParent}}"
-                                                        Style="{StaticResource ColorListStyle}" />
+                                                    <ListBox x:Name="PART_AvailableColors" Grid.Row="1" ItemsSource="{Binding AvailableColors, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ColorListStyle}" />
                                                 </Grid>
                                             </Grid>
 
@@ -375,20 +354,12 @@
                                                         Background="{TemplateBinding HeaderBackground}"
                                                         Foreground="{TemplateBinding HeaderForeground}"
                                                         Text="{TemplateBinding StandardColorsHeader}" />
-                                                    <ListBox
-                                                        x:Name="PART_StandardColors"
-                                                        Grid.Row="1"
-                                                        ItemsSource="{Binding StandardColors, RelativeSource={RelativeSource TemplatedParent}}"
-                                                        Style="{StaticResource ColorListStyle}" />
+                                                    <ListBox x:Name="PART_StandardColors" Grid.Row="1" ItemsSource="{Binding StandardColors, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ColorListStyle}" />
                                                 </Grid>
                                             </Grid>
 
                                             <!--  Recent Colors  -->
-                                            <Grid
-                                                Grid.Row="3"
-                                                Margin="0,1,0,1"
-                                                Visibility="{TemplateBinding ShowRecentColors,
-                                                                             Converter={StaticResource BooleanToVisibilityConverter}}">
+                                            <Grid Grid.Row="3" Margin="0,1,0,1" Visibility="{TemplateBinding ShowRecentColors, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                 <Grid>
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="Auto" />
@@ -400,11 +371,7 @@
                                                         Background="{TemplateBinding HeaderBackground}"
                                                         Foreground="{TemplateBinding HeaderForeground}"
                                                         Text="{TemplateBinding RecentColorsHeader}" />
-                                                    <ListBox
-                                                        x:Name="PART_RecentColors"
-                                                        Grid.Row="1"
-                                                        ItemsSource="{Binding RecentColors, RelativeSource={RelativeSource TemplatedParent}}"
-                                                        Style="{StaticResource ColorListStyle}" />
+                                                    <ListBox x:Name="PART_RecentColors" Grid.Row="1" ItemsSource="{Binding RecentColors, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ColorListStyle}" />
                                                 </Grid>
                                             </Grid>
                                         </Grid>

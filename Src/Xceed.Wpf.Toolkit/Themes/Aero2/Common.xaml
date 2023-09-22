@@ -51,11 +51,7 @@
 
     <!--  New Button Template without MouseOver and Pressed triggers  -->
     <ControlTemplate x:Key="WindowButtonTemplate" TargetType="Button">
-        <Border
-            Name="border"
-            Padding="1"
-            Background="{TemplateBinding Background}"
-            BorderThickness="0">
+        <Border Name="border" Padding="1" Background="{TemplateBinding Background}" BorderThickness="0">
             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
     </ControlTemplate>
@@ -125,11 +121,7 @@
     <!--  ColorCanvas, ColorPicker  -->
     <!--  ===============================================================================  -->
 
-    <DrawingBrush
-        x:Key="CheckerBrush"
-        TileMode="Tile"
-        Viewport="0,0,10,10"
-        ViewportUnits="Absolute">
+    <DrawingBrush x:Key="CheckerBrush" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <GeometryDrawing Brush="White">
