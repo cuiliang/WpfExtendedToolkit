@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>net462</TargetFrameworks>
+    <TargetFrameworks>net472;net8.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>sn.snk</AssemblyOriginatorKeyFile>
@@ -11,21 +11,35 @@
     <RepositoryType>Git</RepositoryType>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     <Authors>DotNetProjects</Authors>
-    <PackageId>DotNetProjects.Extended.Wpf.Toolkit</PackageId>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <!--<PackageId>DotNetProjects.Extended.Wpf.Toolkit</PackageId>-->
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <RootNamespace>Xceed.Wpf.Toolkit</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>Quicker.Extended.Wpf.Toolkit</PackageId>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EnableSourceLink>true</EnableSourceLink>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <Resource Include="**\*.png" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Zoombox\Resources\Zoom.cur" />
     <None Remove="Zoombox\Resources\ZoomRelative.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Zoombox\Resources\Zoom.cur" />

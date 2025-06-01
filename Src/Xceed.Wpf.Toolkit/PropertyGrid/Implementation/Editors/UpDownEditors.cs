@@ -18,10 +18,8 @@ using Xceed.Wpf.Toolkit.Primitives;
 using System;
 using System.Windows;
 using System.Windows.Data;
-#if !VS2008
-using System.ComponentModel.DataAnnotations;
-#endif
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Xceed.Wpf.Toolkit.PropertyGrid.Editors
 {

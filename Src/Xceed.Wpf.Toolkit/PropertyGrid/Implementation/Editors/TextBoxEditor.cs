@@ -14,12 +14,10 @@
 
   ***********************************************************************************/
 
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Data;
-#if !VS2008
-using System.ComponentModel.DataAnnotations;
-#endif
 
 namespace Xceed.Wpf.Toolkit.PropertyGrid.Editors
 {

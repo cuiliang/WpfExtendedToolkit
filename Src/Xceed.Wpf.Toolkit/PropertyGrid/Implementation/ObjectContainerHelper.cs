@@ -18,9 +18,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-#if !VS2008
 using System.ComponentModel.DataAnnotations;
-#endif
 using System.Diagnostics;
 using System.Linq;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;

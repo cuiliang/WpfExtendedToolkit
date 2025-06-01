@@ -201,13 +201,22 @@ namespace Xceed.Wpf.Toolkit
 
       if( source is Array )
       {
+#if NETFRAMEWORK
         using( var stream = new MemoryStream() )
         {
+
           var formatter = new BinaryFormatter();
           formatter.Serialize( stream, source );
           stream.Seek( 0, SeekOrigin.Begin );
           result = ( Array )formatter.Deserialize( stream );
         }
+#else
+        // For .NET Core and .NET 5+, we can use the built-in serialization methods.
+        // Note: BinaryFormatter is not recommended for new development due to security risks.
+        // Use System.Text.Json or other serializers for new projects.
+        result = FormatterServices.GetUninitializedObject( sourceType );
+        Array.Copy( ( Array )source, ( Array )result, ( ( Array )source ).Length );
+#endif
       }
       // For IDictionary, we need to create EditableKeyValuePair to edit the Key-Value.
       else if( ( this.ItemsSource is IDictionary )
@@ -350,6 +359,6 @@ namespace Xceed.Wpf.Toolkit
              && keys.All( x => x != null );
     }
 
-    #endregion
+#endregion
   }
 }

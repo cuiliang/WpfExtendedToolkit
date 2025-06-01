@@ -24,11 +24,9 @@ using System.Diagnostics;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using System.Linq;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 using Xceed.Wpf.Toolkit.Core.Utilities;
 using System.Reflection;
-#if !VS2008
-using System.ComponentModel.DataAnnotations;
-#endif
 
 namespace Xceed.Wpf.Toolkit.PropertyGrid
 {

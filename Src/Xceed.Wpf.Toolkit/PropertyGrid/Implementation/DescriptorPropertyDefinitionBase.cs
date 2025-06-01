@@ -24,11 +24,9 @@ using System.Windows.Media;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Markup.Primitives;
 using System.Windows.Data;
-#if !VS2008
-using System.ComponentModel.DataAnnotations;
-#endif
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace Xceed.Wpf.Toolkit.PropertyGrid

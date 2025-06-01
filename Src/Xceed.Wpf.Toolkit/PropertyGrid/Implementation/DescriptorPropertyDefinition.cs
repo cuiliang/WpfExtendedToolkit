@@ -17,13 +17,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
-#if !VS2008
-using System.ComponentModel.DataAnnotations;
-#endif
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 using System.Globalization;
