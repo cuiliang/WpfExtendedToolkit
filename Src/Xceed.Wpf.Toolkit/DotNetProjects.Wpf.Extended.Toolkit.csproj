@@ -12,9 +12,9 @@
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     <Authors>DotNetProjects</Authors>
     <!--<PackageId>DotNetProjects.Extended.Wpf.Toolkit</PackageId>-->
-    <Version>1.1.0</Version>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.1</Version>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <RootNamespace>Xceed.Wpf.Toolkit</RootNamespace>
   </PropertyGroup>
 
