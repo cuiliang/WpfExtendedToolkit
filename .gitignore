@@ -13,6 +13,9 @@ TestResults
 *.user
 *.sln.docstates
 
+# WPF markup compile temporary project (generated beside the main csproj)
+*_wpftmp.csproj
+
 # Build results
 [Dd]ebug/
 [Rr]elease/
