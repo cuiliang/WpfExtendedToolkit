@@ -419,8 +419,6 @@
             <Trigger Property="SelectedColor" Value="{x:Null}">
                 <Setter TargetName="PART_ColorShadeSelector" Property="Visibility" Value="Collapsed" />
                 <Setter TargetName="SelectedColorBorder" Property="Background" Value="Transparent" />
-                <Setter TargetName="RGBBorder" Property="IsEnabled" Value="False" />
-                <Setter TargetName="RGBBorder" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
